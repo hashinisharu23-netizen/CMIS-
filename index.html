@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>DS University CMIS</title>
+</head>
+<body>
+    <div class="container">
+        <h2>DS University CMIS</h2>
+        
+        <div id="login-section">
+            <input type="email" id="userEmail" placeholder="Enter College Email">
+            <input type="text" value="Default Password: 12345" disabled>
+            <button onclick="attemptLogin()">Sign In</button>
+            <p style="font-size: 0.8rem; color: #666;">Use: student@dsuniversity.ac.in</p>
+        </div>
+
+        <div id="dashboard" class="hidden">
+            <h3 id="userNameDisplay"></h3>
+            <p id="userRoleDisplay" style="color: #3498db; font-weight: bold;"></p>
+            <hr>
+
+            <div id="student-view" class="card hidden">
+                <h4>My Academic Record</h4>
+                <p>Attendance Rate: <strong><span id="attn-val"></span>%</strong></p>
+                <p>Assigned Team: <strong><span id="team-val"></span></strong></p>
+            </div>
+
+            <div id="admin-view" class="card hidden">
+                <h4>Data Entry Portal</h4>
+                <label>Student Database ID:</label>
+                <input type="number" id="targetStudentId" placeholder="e.g. 1">
+                <label>New Attendance (%):</label>
+                <input type="number" id="newAttendance" placeholder="0-100">
+                <button onclick="updateStudentRecord()" style="background-color: #27ae60;">Update Student</button>
+            </div>
+
+            <button onclick="location.reload()" style="background-color: #e74c3c;">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
